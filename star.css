@@ -1,3 +1,7 @@
+.dark-mode #stars{
+   color: black;
+}
+
 #title {
     position: absolute;
     top: 50%;

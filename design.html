@@ -108,6 +108,30 @@
         <a href="#contato"> Contato </a>
         <a href="index.html"> inicio </a>
     </nav>
+
+    <!-- DARKMODE   -->
+    <section class="darkmode">
+
+        <label>
+            <input id="check" type="checkbox" id="check">
+    
+            <i class="fa-solid fa-mountain-sun" id="sun"></i>
+            <i class="fa-solid fa-mountain" id="moon"></i>
+    
+            <span class="toggle"></span>
+        </label>
+    
+    </section>
+
+    <script>
+        const check = document.getElementById('check');
+    
+        check.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        })
+    
+    
+    </script>
 </header>
 
 
@@ -185,7 +209,6 @@
     <div class="footerNav" id="contato">
         <a href=""> 
             <i class="fa-solid fa-envelope"></i> eduardasouzak4@gmail.com </a>
-            <a href=""><i class="fa-brands fa-square-whatsapp"></i> (51) 986248778 </a>
             <a href="index.html"> inicio </a>
 
     </div>
