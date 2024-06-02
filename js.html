@@ -89,29 +89,105 @@
 
 </script>
 
-<div class="body-card">
 
-    <!-- -------BOTÃO NAVEGAÇÃO--------- -->
 
+   <!-- -------BOTÃO NAVEGAÇÃO--------- -->
+
+   <header class="header">
+            
+    <img class="img-logo" src="imgs/logo.portifólio-removebg-preview.png" alt="">
+
+
+<nav class="navbar">
+    <!-- <a href=""> Sobre</a> -->
+    <a href="#habilidades"> Habilidades</a>
+    <a href="#projetos"> Projetos</a>
+    <a href=""> Contato</a>
+    <a href="#inicio"> inicio </a>
     
-    <!-- -------BOTÃO NAVEGAÇÃO--------- -->
+</nav>
 
-    <header class="header">
-        <img class="img-logo" src="imgs/logo.portifólio-removebg-preview.png" alt="">
+<button id="btn-menu" onclick="animar()">
+<span class="linha"></span>
+<span class="linha"></span>
+<span class="linha"></span>
+</button>
 
-    <nav class="navbar">
-        <!-- <a href=""> Sobre</a> -->
-        <!-- <a href="#habilidades"> Habilidades</a> -->
-        <a href="index.html"> Projetos</a>
-        <a href="#contato"> Contato </a>
-        <a href="index.html"> inicio </a>
-    </nav>
+<!-- MOBILE -->
+
+<div class="menu-mobile" id="menu-mobile">
+
+<nav class="navbar-mobile">
+<!-- <a href=""> Sobre</a> -->
+<a href="#habilidades"> Habilidades</a>
+<a href="#projetos"> Projetos</a>
+<a href=""> Contato</a>
+<a href="#inicio"> inicio </a>
+
+</nav>
+</div>
+</div>
+
+
+
+
+<script>
+//mobile
+
+const menuDiv = document.getElementById('menu-mobile');
+const btnAnimar = document.getElementById('btn-menu'); 
+
+menuDiv.addEventListener('click', animar)
+
+function animar(){
+menuDiv.classList.toggle('abrir');
+btnAnimar.classList.toggle('ativar');
+}
+
+//final mobile
+</script>
+
+<!--  final mobile -->
+
+
+
+<!-- DARKMODE -->
+<section class="darkmode">
+
+    <label>
+        <input id="check" type="checkbox" id="check">
+
+        <i class="fa-solid fa-sun" id="sun"></i>
+        <i class="fa-solid fa-moon" id="moon"></i>
+
+        <span class="toggle"></span>
+    </label>
+
+</section>
+
+
+
+<script>
+    const check = document.getElementById('check');
+
+    check.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+    })
+
+
+</script>
+
+
 </header>
 
 
 
-<h1 class="pr-h1"> Trabalhos em JavaScript </h1>
-    
+
+
+<div class="body-card">
+
+    <h1 class="pr-h1"> Trabalhos em JavaScript </h1>
+
 <div id="card-area">
     <div class="wrapper">
         <div class="box-area">
@@ -119,6 +195,7 @@
             <img src="img.js/WhatsApp Image 2024-03-27 at 11.30.34 PM.jpeg" alt="">
             <div class="overlay">
                 <h3> Lista de Tarefas </h3>
+             
                 <p> Projeto utilizando um Box rgb com animação, primeira vez utilizando o DarkMode.</p>
                 <div class="icon">
                 <a href="https://github.com/EduuhSouza/Lista-de-Tarefas"> <i class="fa-brands fa-square-github"></i></a>

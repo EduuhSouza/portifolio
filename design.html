@@ -94,34 +94,81 @@
 
 </script>
 
-<div class="content">
 
-    <!-- -------BOTÃO NAVEGAÇÃO--------- -->
+     <!-- -------BOTÃO NAVEGAÇÃO--------- -->
 
-    <header class="header">
-        <img class="img-logo" src="imgs/logo.portifólio-removebg-preview.png" alt="">
+
+     <header class="header">
+            
+        <img class="logo" src="imgs/logo.portifólio-removebg-preview.png" alt="">
+
 
     <nav class="navbar">
-        <!-- <a href=""> Sobre</a> -->
-        <!-- <a href="#habilidades"> Habilidades</a> -->
+    
         <a href="index.html"> Projetos</a>
         <a href="#contato"> Contato </a>
         <a href="index.html"> inicio </a>
-    </nav>
+        
+</nav>
 
-    <!-- DARKMODE   -->
+<button id="btn-menu" onclick="animar()">
+    <span class="linha"></span>
+    <span class="linha"></span>
+    <span class="linha"></span>
+</button>
+
+<!-- MOBILE -->
+
+<div class="menu-mobile" id="menu-mobile">
+
+<nav class="navbar-mobile">
+
+        <a href="index.html"> Projetos</a>
+        <a href="#contato"> Contato </a>
+        <a href="index.html"> inicio </a>
+
+</nav>
+</div>
+</div>
+
+
+
+
+<script>
+//mobile
+
+const menuDiv = document.getElementById('menu-mobile');
+const btnAnimar = document.getElementById('btn-menu'); 
+
+menuDiv.addEventListener('click', animar)
+
+function animar(){
+menuDiv.classList.toggle('abrir');
+btnAnimar.classList.toggle('ativar');
+}
+
+//final mobile
+</script>
+
+    <!--  final mobile -->
+
+
+
+<!-- DARKMODE -->
     <section class="darkmode">
 
         <label>
             <input id="check" type="checkbox" id="check">
     
-            <i class="fa-solid fa-mountain-sun" id="sun"></i>
-            <i class="fa-solid fa-mountain" id="moon"></i>
+            <i class="fa-solid fa-sun" id="sun"></i>
+            <i class="fa-solid fa-moon" id="moon"></i>
     
             <span class="toggle"></span>
         </label>
     
     </section>
+
+
 
     <script>
         const check = document.getElementById('check');
@@ -132,8 +179,9 @@
     
     
     </script>
-</header>
+    
 
+</header>
 
 
 
