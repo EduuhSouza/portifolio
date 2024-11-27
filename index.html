@@ -2,124 +2,42 @@
 <html lang="pt-br">
 <head>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    <script defer src="js.js"></script>
-
-    <link rel="shortcut icon" href="imgs/logo.portifólio-removebg-preview.png">
-
+    <link rel="shortcut icon" href="fotos/logo.png">
     <link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="star.css">
+<!-- DATA AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <!-- ICONES -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Google Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- javascript MENU MOBILE -->
+<script src="menu.js" defer></script>
+    <!-- FIM javascript MENU MOBILE -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Portifólio </title>
+    <title>Eduarda Souza</title>
 </head>
 <body>
 
-    <!-- -background star--- -->
-    
-    <section class="wrapper-star">
-        <div id="stars"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
-        <div id="title">
-            
-        </div>
-    </section>
-
-
-
-
-    <!--------- SCROLL-------- -->
-
-    <div id="progressobar"></div>
-    <div id="scrollPath"></div>
-
-
-<!-- ------scroll js -->
-
-<script>
-    let progresso = document.getElementById('progressobar');
-
-    let totalHeight = document.body.scrollHeight = window.innerHeight;
-
-    window.onscroll = function(){
-        let progressoHeight = (window.pageYOffset / totalHeight) * 100;
-        progresso.style.height = progressoHeight + "%"
-    }
-</script>
-
-        <!-- --FIM SCROLL -->
-
 
 
     
-        <!-- -------BOTÃO NAVEGAÇÃO--------- -->
+    <header class="header">
+        <div class="logo-img">
+        <img src="fotos/logo.png" alt="">
+    </div>
 
-
-        <header class="header">
-            
-            <img class="logo" src="imgs/logo.portifólio-removebg-preview.png" alt="">
-
-
-        <nav class="navbar">
-            <!-- <a href=""> Sobre</a> -->
-            <a href="#habilidades"> Habilidades</a>
-            <a href="#projetos"> Projetos</a>
-            <a href=""> Contato</a>
-            <a href="#inicio"> inicio </a>
-            
-    </nav>
-
-    <button id="btn-menu" onclick="animar()">
-        <span class="linha"></span>
-        <span class="linha"></span>
-        <span class="linha"></span>
-    </button>
-
-<!-- MOBILE -->
-
-<div class="menu-mobile" id="menu-mobile">
-
-<nav class="navbar-mobile">
-    <!-- <a href=""> Sobre</a> -->
-    <a href="#habilidades"> Habilidades</a>
-    <a href="#projetos"> Projetos</a>
-    <a href=""> Contato</a>
-    <a href="#inicio"> inicio </a>
-    
-</nav>
-</div>
-</div>
-
-
-
-
-<script>
-//mobile
-
-const menuDiv = document.getElementById('menu-mobile');
-const btnAnimar = document.getElementById('btn-menu'); 
-
-menuDiv.addEventListener('click', animar)
-
-function animar(){
-    menuDiv.classList.toggle('abrir');
-    btnAnimar.classList.toggle('ativar');
-}
-
-//final mobile
-</script>
-
-        <!--  final mobile -->
-
-
-
-<!-- DARKMODE -->
+        <!-- DARKMODE   -->
         <section class="darkmode">
 
             <label>
@@ -132,9 +50,7 @@ function animar(){
             </label>
         
         </section>
-
-
-
+    
         <script>
             const check = document.getElementById('check');
         
@@ -144,209 +60,267 @@ function animar(){
         
         
         </script>
-        
 
-    </header>
+    <nav class="navbar">
+       
+        <a href="#inicio"> Inicio </a>
+        <a href="#contato"> Contato </a>
+        <a href="#projetos"> Projetos </a>
+        <a href="#habilidades"> Habilidades </a>
+    </nav>
+
 
     
-        <!----------SOBRE--------- -->
-<section class="home" id="inicio">
+<!-- MOBILE -->
 
-        <div class="content-home">
-            <div class="flex">
-            <div class="text-content-home">
-            <h1> Oi, eu sou <span class="text">Eduarda</span></h1>
-
-            <p> Amo design e artes em geral, estudo programação pois acho que é uma área onde se pode soltar a criatividade a vontade e explorar melhor os elementos. Faço artes personalizadas e artes com Inteligência atificial á algum tempo e sempre estou aprendendo coisas novas sobre a arte. </p>
+<div class="btn-abrir-menu" id="btn-menu"> <!-- COMEÇO ABRIR MENU -->
+    <i class="fa-solid fa-bars"></i>
+</div> <!-- FINAL ABRIR MENU -->
 
 
-        </div>
+<div class="menu-mobile" id="menu-mobile"> <!-- COMEÇO MENU MOBILE-->
+    <div class="btn-fechar">
+        <i class="fa-solid fa-xmark"></i>
+    </div>
 
-
-       <div class="img-perfil">
+    <nav class="mobile-nav">  <!-- COMEÇO NAVBAR MENU -->
         
-        <img src="imgs/Perfil.jpeg" alt="">
+        <a href="#inicio"> Inicio </a>
+        <a href="#contato"> Contato </a>
+        <a href="#projetos"> Projetos </a>
+        <a href="#habilidades"> Habilidades </a>
 
+    </nav> <!-- FINAL NAVBAR MENU -->
+    
+</div> <!-- FINAL MENU MOBILE-->
+<div class="overlay-menu" id="overlay-menu"></div>
+
+<!-- FIM MOBILE -->
+
+</header>
+
+<div class="main-container" id="inicio" data-aos="fade-up">
+
+    <div class="content">
+        <h1> Olá, eu sou <span> Eduarda Souza</span></h1>
+
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem unde perspiciatis dolore, est quae minima architecto quas. Beatae vitae officia saepe nesciunt excepturi provident repellendus assumenda. Asperiores, a aperiam. Recusandae!</p>
+    
+
+    <!-- ICONES -->
+    <div class="icons-social">
+        <a href="https://www.linkedin.com/in/eduarda-souza-3157942b0/" class="icon1"> <i class="fa-brands fa-linkedin-in"></i></a>
+
+        <a href="https://www.instagram.com/souza.eduuh/" class="icon2"> <i class="fa-brands fa-instagram"></i></a>
+
+        <a href="https://github.com/EduuhSouza" class="icon3"> <i class="fa-brands fa-github"></i></a>
+    </div>
+    
+
+    <div class="btn-cv">
+    <button > Download CV</button>
 </div>
 </div>
 
-     </div>
+    <!-- IMAGEM FOTO -->
+    <div class="img-foto">
+        <img src="fotos/foto.perfil.jpeg" alt="">
+    </div>
+</div>
+
+<!-- SOFTSKILLS -->
+<div class="conteiner-2" id="habilidades" data-aos="fade-up"
+data-aos-duration="3000">
+
+    <div class="titulo-soft">
+        <h2> Soft Skills </h2>
+    </div>
+
+    <div class="icon">
+        <i class="fa-solid fa-comments">
+            <p>Comunicação</p></i>
+
+        <i class="fa-solid fa-people-group"><p>Trabalho em grupo</p></i>
+
+        <i class="fa-solid fa-arrows-to-circle">
+            <p>Foco</p></i>
+
+        <i class="fa-solid fa-lightbulb">
+            <p>Criatividade</p></i>
+
+  <i class="fa-solid fa-clipboard-check">
+    <p>Organização</p></i>
+
+    </div>
+</div>
+
+<!-- HARD SKILLS -->
+    <div class="titulo-soft">
+        <h2> Hard Skills </h2>
+    </div>
+
+    <div class="icon">
+
+        <i class="fa-brands fa-html5">
+            <p>HTML5</p>
+        </i>
+
+        <i class="fa-brands fa-css3-alt">
+            <p>CSS3</p>
+        </i>
+
+        <i class="fa-brands fa-js">
+            <p>JavaScript</p>
+        </i>
+
+        <i class="fa-brands fa-php">
+            <p>PHP</p>
+        </i>
+        
+        <i class="fa-brands fa-bootstrap">
+            <p>Bootstrap</p>
+        </i>
+
+        <i class="fa-brands fa-figma">
+            <p>Figma</p>
+        </i>
+
+    </div>
+
+</div>
+
+<!-- PARALLAX -->
+
+<div class="wrapper">
+        <section class="modulo parallax parallax-1">        
+        </section>
+
+        <section class="modulo content">
+            <div class="container">
+                <h3> "Sonhos exigem paciência no resultado e dedicação no processo" </h3>
+                
+            </div>
+    </section>
+    
+
+ <!-- PROJETOS------------ -->
+ 
+<div class="container-box" id="projetos" data-aos="fade-up"
+data-aos-duration="3000">
+
+    <!-- DESIGN -->
+
+    <div class="box-pr">
+
+        <div class="img-pr">
+        <img src="https://ied.edu.br/news/19019/image-thumb__19019__scaleByWidth1000/Design%20Gr%C3%A1fico%20e%20Digital%20do%20IED%20SP_1.png" alt="">
+    </div>
+    
+        <a href="design.html"> Design</a>
+    </div>
+    
+    
+    <!-- HTML E CSS -->
+    <div class="box-pr">
+
+        <div class="img-pr">
+        <img src="https://profroberto.com.br/images/html-css-logo.png" alt="">
+    </div>
+
+    <a href="htmlecss.html"> HTML e CSS</a>
+    </div>
+    
+
+    <!-- JS -->
+    <div class="box-pr">
+
+        <div class="img-pr">
+        <img src="https://ih1.redbubble.net/image.2221346343.9025/fposter,small,wall_texture,square_product,600x600.jpg" alt="">
+    </div>
+
+    <a href="js.html"> JavaScript</a>
+    </div>
+</div>
+
+
+<!-- PARALLAX -->
+
+<div class="wrapper">
+    <section class="modulo parallax parallax-2">        
+    </section>
+
+    <section class="modulo content">
+        <div class="container">    
         </div>
-
 </section>
 
 
-         <!-- ICONES REDES -->
+<!-- CURSOS E DESENVOLVIMENTO -->
 
-         
-         <div class="social-menu">
-            <div class="social-icon">
-                <a href="https://www.linkedin.com/in/eduarda-souza-3157942b0/" class="icon1"> <i class="fa-brands fa-linkedin-in"></i></a>
-               
-            </div>
 
-            <div class="social-icon">
-                <a href="https://www.instagram.com/souza.eduuh/" class="icon2"> <i class="fa-brands fa-instagram"></i></a>
-                
-            </div>
+    <div class="titulo-curso">
+        <h1>Cursos e Formações</h1>
+    </div>
 
-            <div class="social-icon">
-                <a href="https://github.com/EduuhSouza" class="icon3"> <i class="fa-brands fa-github"></i></a>
-                
-            </div>
+    <!-- PAO -->
+    <div class="cursos">
+    <div class="box-cursos">
+        <div class="data">
+            <p> <i class="fa-regular fa-clock"></i> 2024 - Atual</p>
         </div>
-
-       
-
-    </section>
-    
-  
-
-        <!-- ---FINAL SOBRE------- -->
-
-        <!-- -----COMEÇO PARALLAX-------- -->
-
-
-         <!--  PARALLAX 1 -->
-        <section class="modulo content">
-        
-            <section class="modulo parallax parallax-1">
-
-            </section>
-            <section class="modulo content">
-                <div class="container">
-                    <h2> "Sonhos exigem paciência no resultado e dedicação no processo" </h2>
-                </div>
-        </section>
-        </section>
-
-
-
-        
-        
-
-        <!-- -------CARDS-------- -->
-
-        <div class="container2" id="habilidades">
-    <!-------------- CSS-------- -->
-
-    <h1> Habilidades </h1>
-<div class="body-card">
-
-    <div class="card">
-        <div class="icon-card">
-
-            <!-- html----------- -->
-            <i class="fa-brands fa-html5" id="html-card">
-                <p> HTML </p>
-            </i>
-
-<!-- css---------------- -->
-        
-<i class="fa-brands fa-css3-alt" id="css-card">
-    <p> CSS </p>
-</i>
-
-<!-- js-------------- -->
-<i class="fa-brands fa-square-js" id="js-card">
-    <p> JavaScript </p>
-</i>
-
-<!--    PHP     -->
-
-<i class="fa-brands fa-php" id="php-card">
-    <p>PHP</p>
-</i>
-
-<!-- -------- bootstrap---------- -->
-<i class="fa-brands fa-bootstrap" id="bt-card">
-    <p> Bootstrap </p>
-</i>
-
-
-<!-- Artes -->
-<i class="fa-solid fa-pen-nib" id="design-card">
-    <p> Design </p></i>
-
-<!-- Organização---------- -->
-
-<i class="fa-solid fa-clipboard-check" id="org-card">
-    <p> Organizada </p>
-</i>
-
-<!-- Trabalho em grupo----- -->
-<i class="fa-solid fa-people-group" id="equipe-card">
-    <p>Trabalho em Equipe</p>
-</i>
-
-
-
+        <div class="curso-t">
+            <h3>Manutenção de Computadores</h3>
+            <p>Fundação O Pão dos Pobres Santo Antônio</p>
         </div>
     </div>
 
+    <!-- UNISINOs -->
+    <div class="box-cursos">
+        <div class="data">
+            <p> <i class="fa-regular fa-clock"></i> 2024 - Atual</p>
+        </div>
 
-
-
-</div>
-</div>
-
-
-
-<h1 class="projetos"> Explore meus Projetos </h1>
-
-
-
-<!-- PROJETOS----------------------- -->
-
-
-<div class="body-pr" id="projetos">
-
-
-<div class="container-pr">
-    <div class="card-pr">
-        <div class="box">
-            <div class="content-pr">
-                <h2> Arte </h2>
-                <h3> Design </h3>
-                
-                <a href="design.html"> Saiba mais</a>
-            </div>
+        <div class="curso-t">
+            <h3>Faculdade de Marketing</h3>
+            <p>Universidade do Vale do Rio dos Sinos</p>
         </div>
     </div>
+
 </div>
 
+    <div class="cursos">
+       <!-- IOS -->
+       <div class="box-cursos">
+        <div class="data">
+            <p> <i class="fa-regular fa-clock"></i> 2023-2024</p>
+        </div>
 
-<div class="container-pr2">
-    <div class="card-pr2">
-        <div class="box2">
-            <div class="content-pr2">
-                <h2> Tech </h2>
-                <h3> HTML e CSS </h3>
-                
-                <a href="htmlcss.html"> Saiba mais</a>
-            </div>
+        <div class="curso-t">
+            <h3>Desenvolvimento Full Stack</h3>
+            <p>Instituto da Oportunidade Social</p>
         </div>
     </div>
-</div>
 
-<div class="container-pr3">
-    <div class="card-pr3">
-        <div class="box3">
-            <div class="content-pr3">
-                <h2> JS </h2>
-                <h3> JavaScript </h3>
-                
-                <a href="js.html"> Saiba mais</a>
-            </div>
+    <!-- ENJOY -->
+    <div class="box-cursos">
+        <div class="data">
+            <p> <i class="fa-regular fa-clock"></i> 2021 - 2021</p>
+        </div>
+
+        <div class="curso-t">
+            <h3>Marketing Digital</h3>
+            <p>Enjoy</p>
         </div>
     </div>
+    </div>
+
 </div>
 
 
 
-</div> <!-- FIM CARD  -->
+</div>
+</div>
 
-<!-- FOOTER----------------- -->
 
 <!-- FOOTER----------------- -->
 
@@ -370,12 +344,37 @@ function animar(){
 
     </div>
     <div class="footer-bottom">
-        Desenvolvido por Eduarda Souza | &real; Desenvolvimento Web FullStack Instituto da Oportunidade Social ( IOS ) |
+        Desenvolvido por Eduarda Souza | &real; 2024
     </div>
 </div>
 </div>
 
 
+<!-- ACESSIBILIDADE -->
+<script src="https://cdn.userway.org/widget.js" data-account="kCDHqw9ltL"></script>
+<div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+
+<!-- LIBRAS -->
+<div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
+
+<script>
+    AOS.init();
+  </script>
 
 </body>
 </html>

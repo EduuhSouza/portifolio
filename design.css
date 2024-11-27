@@ -1,345 +1,256 @@
-font-face {
-    font-family: fonte1;
-    src: url(fontes/Good\ Wish.otf);
+@charset "utf-8";
+
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width: 15px;
+    background: black;
 }
 
-@font-face {
-    font-family: fonte2;
-    src: url(fontes/KGRedHands.ttf);
-} /*  fonte parágafro */
-
-@font-face {
-    font-family: fonte3;
-    src: url(fontes/appopaint-Regular.otf);
-}/* Fonte h1  */
-
-@font-face {
-    font-family: fonte4;
-    src: url(fontes/edosz.ttf);
-} /* fonte navBar */
+::-webkit-scrollbar-thumb{
+    background: var(--vermelho);
+}
 
 
+/* ROOT CORES */
+:root {
+    --vermelho-dark: #a80000a8;
+    --vermelho: #ff0000dc;
+    --cinza: #353434;
+}
 
 
+/* formatação padrao */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Asap", sans-serif;
+}
+
+
+/* CORPO */
 body{
-    min-height: 100vh;
-    /* background: linear-gradient(40deg, black, rgba(155, 0, 160, 0.568), rgb(117, 0, 117), rgb(0, 0, 0), black); */
-    background-color: #044851;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23DD1098'/%3E%3Cstop offset='1' stop-color='%23044851'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23FA3' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23FA3' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.4'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
-background-attachment: fixed;
-background-size: cover;
-
+    background: black;
+    transition: all .5s ease-in-out;
 }
 
-html{
+/* Rolagem suave */
+html {
     scroll-behavior: smooth;
 }
 
-/* ----------SCROLL-------- */
-
-::-webkit-scrollbar{
-    width: 0;
-}
-
-#scrollPath{
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 10px;
-    height: 100%;
-    background: rgba(255,255,255,0.05);
-}
-
-#progressobar{
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 10px;
-    height: 100%;
-    background: linear-gradient(to top, #008aff, #00ffe7);
-    animation: gradientScroll 5s linear infinite;
-}
+/*---------LOGO NAVBAR ----------  */
 
 
-/* ----ANIMAÇÃO SCROLL */
+/* CABEÇALHO NAVBAR*/
 
-@keyframes gradientScroll {
-    0%, 100%{
-        filter: hue-rotate(0deg);
-    }
-    50%{
-        filter: hue-rotate(360deg);
-    }
-    
-}
-
-#progressobar:before{
-
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, #ffd000, #ff0000 );
-    filter: blur(30px);
-}
-
-#progressobar:after{
-
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, #008aff, #00ffe7 );
-    filter: blur(30px);
-}
-
-/* ----FIM SCROLL */
-
-
-
-/* --------- EFEITO VIDRO NAVBAR------- */
-
-.header{
-
-    max-height: 10%;
+header{
+    max-height: 20%;
     position: fixed;
     top: 0;
     left: 0;
-    margin-top: 1em;
-
     width: 100%;
-    padding: 10px 15px;
-    background: rgba(255, 255, 255, .1);
+    /* padding: 20px 15px; */
     display: flex;
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(10px);
-    border-bottom: 2px solid rgba(255, 255, 255, .2);
+    position: fixed;
+    align-items: center;
+    z-index: 9;
+
 }
 
-.header::before{
-
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255, .4), transparent);
-    transition: 1s;
-}
-
-.header:hover:before{
-    left: 100%;
-}
-
-
-
-/*---------------- BOTÃO NAVBAR------- */
-
-
-.navbar a{
-    margin-right: 2em;
-    color: white;
-    font-size: 1.5em;
-    text-decoration: none;
-    margin-left: 35px;
-    transition: 1s;
-    font-family: fonte4;
-    transition: all .5s ease-in-out;
-    
-}
-
-.navbar a:hover{
-    color: rgb(255, 230, 0);
-    box-shadow: 1px 1px 10px rgb(255, 255, 255);
-    padding: 10px 15px;
-    border-radius: 1.5em .5em;
-    
-}
-
-
-/* --------FINAL BOTÃO NAVBAR */
-
-/*---------LOGO NAVBAR ----------  */
-
-.logo{
-    margin-top: 8em;
-    width: 33%;
-    padding-right: 20%;
+.logo-img img{
+    /* z-index: 900000000; */
+    margin-top: 5em;
+    width: 60%;
+    padding-right: 30%;
     transition: all 1s;
 }
 
-.logo:hover{
-    /* margin-top: 15em ; */
-    width: 30%;
+
+.navbar a {
+    position: relative;
+    margin-left: 2em;
+    font-size: 1em;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: white;
+    text-shadow: 0 0 10px black;
+    transition: all .5s ease-in-out;
 }
+
+.navbar a:hover{
+   color: var(--vermelho);
+}
+
+/* ANIMAÇÃO NAVBAR TEXTO */
+
+.navbar a::after {
+    content: "";
+    width: 0%;
+    height: 1px;
+    background-color: white;
+    box-shadow: 0 0 10px white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: .5s ease-in-out;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* FIM ANIMAÇÃO NAVBAR TEXTO */
+/* --------FINAL BOTÃO NAVBAR */
 
 
 /* MENU MOBILE */
 
 .menu-mobile{
-    text-align: center;
-    background-color: rgba(153, 0, 255, 0.596);
-   /* backdrop-filter: blur(5px); */
-    position: absolute;
-    top: 120px;
-    left: 0;
-    width: 100%;
-    height: 0;
-    
-    /* display: none; */
-    visibility: hidden;
-    transition: .5s;
+    background-color: black;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    width: 0%;
     overflow: hidden;
+    transition: .5s;
 }
 
-.menu-mobile nav a{
-    backdrop-filter: blur(5px);
-    margin-right: 2em;
-    color: rgb(255, 255, 255);
-    text-shadow: 0 0 10px black;
-    font-size: 2em;
-    
-    text-decoration: none;
-    margin-left: 35px;
-    transition: 1s;
-    font-family: fonte4;
-    transition: all .5s ease-in-out;
-    
+
+
+/* CONFIG MENU ABRIR */
+.menu-mobile.abrir-menu{
+width: 70%;
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu{
     display: block;
-    padding: 20px 30px;
-    
+}
+
+
+/* ANIMAÇÃO NAVBAR TEXTO */
+
+.menu-mobile nav a{
+    text-align: right;
+    text-decoration: none;
+    font-size: 1.8em;
+    padding: 20px 10%;
+    display: block;
+    color: white;
+    transition: all .5s ease-in-out;
 }
 
 .menu-mobile nav a:hover{
-   background-color:#2b2b2b;
-    box-shadow: 1px 1px 10px rgb(255, 255, 255);
-    padding: 20px 25px;
-
+    background-color: var(--vermelho);
+    color: black;
 }
 
-/* BOTAO ICONE */
+/* BOTAO DE FECHAR O MOBILE */
 
-button{
-    margin-right: 3em;
-    width: 50px;
-    height: 50px;
-    border: 2px solid rgb(255, 183, 0);
-    background: transparent;
-    border-radius: 5px;
+.menu-mobile .btn-fechar{
+    padding: 10px 4%;
+}
+
+.menu-mobile .btn-fechar i{
+color: var(--vermelho);
+font-size: 2.5em;
+cursor: pointer;
+transition: all .5s;
+display: flex;
+justify-content: end;
+}
+
+.menu-mobile .btn-fechar i:hover{
+    color: red;
+}
+
+/* BOTAO ABRIR MENU */
+.btn-abrir-menu i{
+    color: var(--vermelho-dark);
+    font-size: 40px;
+    visibility: hidden;
     cursor: pointer;
+    transition: all .5s;
+    display: flex;
+    justify-content: end;
+    text-align: end;
+}
+
+/* DARkMODE */
+.dark-mode .btn-abrir-menu i{
+    color: red;
+}
+
+.btn-abrir-menu i:hover{
+    color: var(--vermelho);
+}
+
+
+/* OVERLAY MENU */
+
+.overlay-menu{
+    background-color: rgba(0, 0, 0, 0.473);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88888;
     display: none;
 }
 
-.linha{
-    width: 30px;
-    height: 4px;
-    background-color: rgb(255, 183, 0);
-    box-shadow: 0 0 10px rgb(255, 183, 0);
-    display: block;
-    text-align: center;
-    margin: 10px auto;
-    position: relative;
-    transform-origin: center ;
-    transition: .3s;
-}
+/* FORMATAÇÃO CELULAR HEADER E MENU MOBILE */
 
-button.ativar{
-    /* border: 4px solid red; */
-    box-shadow: 0 0 5px red;
+@media screen and (max-width: 1020px) {
 
-}
+    /* MENU MOBILE */
 
-button.ativar .linha:nth-child(1){
-    transform: translateY(10px) rotate(-40deg);
-    background-color: red;
-    box-shadow: 0 0 10px red;
-}
-
-button.ativar .linha:nth-child(3){
-    transform: translateY(-18px) rotate(40deg);
-    background-color: red;
-    box-shadow: 0 0 10px red;
-}
-
-button.ativar .linha:nth-child(2){
-    opacity: 0;
-}
-
-/* CELULAR */
-
-@media screen and (max-width: 1000px) {
-    .navbar, a{
+    .navbar{
         display: none;
     }
-    
-    .logo{
-        width: 50%;
-    }
 
-    .menu-mobile.abrir{
+    .btn-abrir-menu i{
+        color: white;
+        font-size: 40px;
         visibility: visible;
-        height: calc(100vh - 120px);
+        display: flex;
+        justify-content: end;
+        text-align: end;
     }
 
-    button{
-        display: block;
+   
+.logo-img img{
+    margin-top: 9em;
+    width: 100%;
+    padding-right: 30%;
+    transition: all 1s;
+}
+
+
     }
-}
+    
 
 
-/* DARKMODE */
+/* FIM MOBILE */
 
-.dark-mode{
-    /* background: white; */
-    /* background: linear-gradient(40deg, white, purple, purple, white, black); */
-    background-color: #FFFFFF;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23A70C73'/%3E%3Cstop offset='1' stop-color='%23FFFFFF'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23FFFFFF' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23FFFFFF' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.4'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
-background-attachment: fixed;
-background-size: cover;
-}
-
-/*  NAVBAR*/
-
-.dark-mode .galeria-h1{
-    background: rgba(255, 255, 255, 0.651);
-    color: #000000;
-}
-
-.dark-mode header{
-    color: black;
-    background: rgba(255, 255, 255, 0.521);
-}
-
-.dark-mode .navbar a:hover{
-    color: white;
-    background: black;
-}
-
-.dark-mode .navbar a{
-    color: black;
-}
-
-/* footer */
-
-.dark-mode .footer-bottom{
-    color: black;
-}
 
 /* FORMATAÇÃO BOTAO DARKMODE */
 section{
     top: 0;
     left: 1;
+
 }
 
 .darkmode label{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
@@ -352,13 +263,14 @@ section{
 .darkmode input{
     position: absolute;
     opacity: 0;
+    
 }
 
 /* ------------icones---------- */
 #sun{
     position: absolute;
     font-size: 2em;
-    color: #666;
+    color: gold;
     filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.644));
     transform: scale(0);
     transition: 1s ease;
@@ -369,10 +281,9 @@ section{
     transform: scale(1) rotate(360deg);
 }
 
-
 #moon{
     font-size: 2em;
-    color: #666;
+    color: gray;
     filter: drop-shadow(0 0 2px rgba(0, 0 ,0, .5));
     transition: 1s ease;
 
@@ -386,276 +297,276 @@ section{
 /*--------final icones------------- */
 
 .toggle{
+    margin-left: -25%;
     position: absolute;
     display: block;
     width: 60px;
     height: 60px;
-    background: #2b2b2b;
     border-radius: 50%;
-    box-shadow: 
-    inset 0 8px 60px rgba(70, 70, 70, 0.1),
-    inset 0 8px 8px rgba(80, 80, 80, 0.1),
-    inset 0 -4px 4px rgba(99, 99, 99, 0.1);
     z-index: -1;
     transition: 1s;
 }
 
-.darkmode input:checked~.toggle{
-    background: #f8f8f8;
 
+/* DARKMODE FORMATAÇÃO FIM*/
+
+/* DARKMODE CORPO */
+.dark-mode{
+    background: rgb(194,2,2);
+background: linear-gradient(195deg, rgba(194,2,2,1) 0%, rgba(255,255,255,1) 65%, rgba(255,255,255,1) 91%);
 }
 
-/* intro---------------------- */
 
-html{
-    box-sizing: border-box;
-    font-size: 62.5%;
-    font-family: sans-serif;
-}
+ /* PARALLAX */
 
-*,
-*::after,
-*::before{
-    margin: 0;
-    padding: 0;
-    font-family: inherit;
-    box-sizing: inherit;
-
-}
-
-#intro-img{
-    width: 15%;
-}
-
-.intro{
-    position: fixed;
-    top: 0;
-    left: 0;
+ .wrapper{
     width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    z-index: 1;
-    background-color: #000000;
-    transition: 2s;
-
-}
-
-.intro img{
-    top: 150px;
-    position: absolute;
-}
-
-.intro p{
-    color: white;
-    font-size: 1.5rem;
-    margin-top: 350px;
-    font-family: fonte2;
-}
-
-.logo{
-    font-size: 2.5rem;
-    color: white;
-}
-
-.logo-parts{
-    position: relative;
-    display: inline-block;
-    bottom: -20px;
-    opacity: 0;
-
-}
-
-.logo-parts.active{
-    bottom: 0;
-    opacity: 1;
-    transition: ease-in-out 1s;
-}
-
-.logo-parts.fade{
-    bottom: 250px;
-    opacity: 0;
-    transition: ease-in-out 1s;
-}
-
-.content {
+    margin: 0;
+    margin: auto;
+    }
+    
+    
+    .container-par{
     width: 100%;
-    /* padding: 50px; */
-    /* font-size: 1rem; */
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-}
-
-
-
-/* projetos------------------------- */
-
-.galeria-h1{
-    margin-top: 9em;
-    font-weight: 400;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
-    color: white;
-    font-family: fonte2;
-
-}
-
-img{
-    max-width: 95%;
-    height: auto;
-    vertical-align: middle;
-    display: inline-block;
-
-   
-}
-
-ul, li{
-    list-style: none;
-    padding: 0;
-    margin: 10px;
-}
-
-.grid-wrapper{
-    position: relative;
-    margin: 0;
-    padding: 10px;
-    width: 70%;
-    margin-left: 15% ;
-}
-
-.grid-wrapper2{
-    margin-top: 30%;
-    position: relative;
-    margin: 0;
-    padding: 10px;
-}
-
-.grid-wrapper ul{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-auto-flow: dense;
-    grid-gap: 2px;
-    justify-content: center;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0;
-    transition: all 1s ease-in-out;
-}
-
-.grid-wrapper ul li{
-    transition: all .5s ease-in-out;
+    }
+    
+    
+    section.modulo h3{
+    margin-bottom: 20px;
+    font-size: 3em;
+    text-align: center;
+    color: var(--vermelho);
+    }
+    
+    section.modulo.content{
+    padding: 40px 0;
+    background: rgb(0, 0, 0);
+    
+    }
+    
+    section.modulo.parallax{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
     position: relative;
-    filter: opacity(0.5);
+    overflow: hidden;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    }
+    
+    section.modulo.parallax:after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    z-index: 8; 
+    position: absolute;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0, 0,0,0) 50%, rgb(0, 0, 0)) ;
+    
+    }
+    
+    section.modulo.parallax-1{
+    background-image: url(fotos/wallpaper1.jpeg)
+    }
+
+
+/* descrição */
+
+.descricao{
+    text-align: center;
+    color: white;
+    margin: 2em;
+    font-size: 1.4em;
 }
 
 
-.grid-wrapper ul img{
-    width: 90%;
-    height: 90%;
-    object-fit: cover;
-    
-    
+/* FERRAMENTAS USADAS */
+
+.ferramentas{
+    text-align: center;
+
 }
 
-.grid-wrapper ul li:hover{
-    filter: opacity(1);
-    /* height: 100%; */
-    /* width: 100%; */
-    /* transition: .5s; */
-cursor: pointer;
+.ferramentas h1{
+    color: white;
+    text-align: center;
+    margin-top: 5em;
+}
+
+
+/* IMAGENS */
+.box-ferramentas{
+    border-top: solid var(--vermelho);
+    display: flex;
+    justify-content: center;
+}
+
+.box-ferramentas img{
+   width: 15%;
+   height: 15%;
+   margin: 3em;
+   transition: all .5s ease-in-out;
+}
+
+
+.box-ferramentas img:hover{
+    padding: .5em;
+    border-radius: 50%;
+   /* background-color: var(--vermelho-dark); */
+   box-shadow: 0 0 10px var(--vermelho);
+}
+
+
+  
+
+/* GALERIA */
+
+   .galeria-h1{
+    margin-top: 5em;
+    text-align: center;
+    color: white;
+}
+ 
+.container-galeria{
+    border-top: solid var(--vermelho);
+        display: flex;
+        justify-content: center; 
+        align-items: center;    
+        padding: 20px;
+        margin: 0 auto;
+}
+ 
+.foto-galeria {
+
+    width: 80%;             
+    max-width: 1000px;       
+    column-count: 3;          
+    column-gap: 10px;         
+    padding: 10px;
+}
+
+/* Estilos das imagens */
+.foto-galeria img {
+    width: 100%;
+    opacity: 0.5;           
+    transition: opacity 0.5s ease-in-out; 
+    border-radius: 10px;      
+    margin-bottom: 10px;      
+}
+
+.foto-galeria img:hover {
+    opacity: 1; 
 }
 
 
 /* ----FOOOTEEEEEERRRR-------- */
 
+footer{
+    background-color: transparent;
+}
+
+
+
 .footer-container{
     margin-top: 5em;
     width: 100%;
     padding: 70px 30px 20px;
-    box-shadow: 0 0 30px white;
+    box-shadow: 0 0 30px var(--vermelho-dark);
+}
+
+/* darkmode */
+.dark-mode .footer-container{
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 0 30px var(--vermelho-dark);
+}
+
+.social-icons{
+    /* display: flex; */
+    /* justify-content: center; */
     text-align: center;
 }
 
-.social-icon a{
-
-    display: inline-block;
-    width: 60px;
-    height: 60px;
-    background: rgba(128, 128, 128, 0.432);
-    border-radius: 50%;
-    text-align: center;
-    margin: 0 8px;
-    box-shadow: 0 4px 2px rgba(192, 192, 192, 0.541);
-    transition: all .5s ease-in-out;
-}
-
-.social-icon i{
-    
-    font-size: 30px;
-    color: rgb(0, 0, 0);
-    line-height: 60px;
-    cursor: pointer;
-    transition: all .5s ease-in-out;
-}
-
-
-.icon1:hover{
-    background: rgb(0, 145, 189);
-    box-shadow: 0 0 20px rgb(0, 145, 189);
+.social-icons a:hover{
     transform: translateY(-10px);
 }
 
-.icon2:hover{
-    
-    background: linear-gradient(5deg, purple, gold, red);
-    box-shadow: 0 0 5px purple,
-    0 0 10px gold,
-    0 0 20px red;
-    transform: translateY(-10px);
+.social-icons i{
+    text-decoration: none;
+    margin: 10px;
+    color: var(--vermelho);
+    font-size: 3em;
+    transition: all .5s;
 }
 
-.icon3:hover{
-    background: rgb(255, 255, 255);
-    background-size: 20px;
-    box-shadow: 0 0 20px rgb(255, 255, 255);
-    transform: translateY(-10px);
+.social-icons i:hover{
+    color: white;
 }
+
 
 .footerNav{
     margin: 30px 0;
 }
 
-.contato{
-    margin: 30px 0;
-    font-size: 1em;
+.footerNav i{
+  font-size: 2em;
 }
 
 .footerNav a{
-    font-size: 1.5em;
-    font-family: fonte2;
-    color: #ffffff;
     text-decoration: none;
-    /* box-shadow: 0 0 10px rgb(255, 255, 255); */
-    border-radius: 10px 20px;
+    font-size: 1em;
+    color: var(--vermelho);
     padding: 10px;
     margin: 15px ;
     transition: all .5s ease-in-out;
 }
 
 .footerNav a:hover{
-    background: rgb(58, 58, 58);
-    box-shadow: 0 0 30px white;
     color: rgb(255, 255, 255);
 }
 
+/* darkmode */
+/* .dark-mode .footerNav a:hover{
+    color: black;
+} */
+
 .footer-bottom{
-    color: #ffffff;
-    /* background: linear-gradient(50deg, black,black,rgb(107, 0, 0), purple,black, black, black); */
-    font-size: 1.5em;
-    font-family: fonte2;
+    color: white;
+    background: linear-gradient(50deg, black,transparent,var(--vermelho-dark),transparent, transparent, black);
+    font-size: 1em;
     padding: 2em;
     text-align: center;
+}
+
+
+/* MEDIA -------- */
+@media (max-width: 884px) {
+
+/* footer----------- */
+    .footer-container{
+       text-align: center;
+        width: 100%;
+    }
+
+    .social-icons{
+        width: 100%;
+        text-align: center;
+        
+    }
+ 
+    .footerNav{
+        flex-direction: column;
+    }
+    
+    .footerNav a{
+        width: 100%;
+        text-align: center;
+        margin: 10px 40px;
+       
+    }
 }
